@@ -20,28 +20,23 @@ const Summary = () => {
         });
   }, [id]);
 
-
-  
   useEffect(() => {
-  
-    const storedModalState = localStorage.getItem('modalState');
+    const storedModalState = localStorage.getItem("modalState");
     if (storedModalState) {
       setmodal(JSON.parse(storedModalState));
     }
   }, []);
   useEffect(() => {
-    
-    localStorage.setItem('modalState', JSON.stringify(modal));
+    localStorage.setItem("modalState", JSON.stringify(modal));
   }, [modal]);
   return (
     <>
-    {modal.show && (
+      {modal.show && (
         <ModalForm
           datamodal={modal.show && modal?.datamodal}
           setmodal={setmodal}
         />
       )}
-
 
       <div className="flex   h-[100vh] w-[100vw] overflow-hidden items-center justify-center bg-[#252831]">
         {data ? (
@@ -56,25 +51,41 @@ const Summary = () => {
                 <p className="text-5xl font-semibold ">{data?.name}</p>
                 <div dangerouslySetInnerHTML={{ __html: data?.summary }} />
                 <div className="flex gap-x-10">
-                  <p className="bg-black bg-opacity-30 py-1.5 px-4  rounded-lg" title="Language">{data?.language}</p>
-                  <p className="bg-black bg-opacity-30 py-1.5 px-4  rounded-lg" title="Genres">{data?.genres.join(", ")}</p>
-                  <p className="bg-black bg-opacity-30 py-1.5 px-4  rounded-lg" title="Rating">{data?.rating.average ?(data?.rating.average):('-') 
-				  
-				  
-				  }</p>
+                  <p
+                    className="bg-black bg-opacity-30 py-1.5 px-4  rounded-lg"
+                    title="Language"
+                  >
+                    {data?.language}
+                  </p>
+                  <p
+                    className="bg-black bg-opacity-30 py-1.5 px-4  rounded-lg"
+                    title="Genres"
+                  >
+                    {data?.genres.join(", ")}
+                  </p>
+                  <p
+                    className="bg-black bg-opacity-30 py-1.5 px-4  rounded-lg"
+                    title="Rating"
+                  >
+                    {data?.rating.average ? data?.rating.average : "-"}
+                  </p>
                 </div>
 
-				<div>
-
-					<button   onClick={() => {
-                        setmodal({ show: true, datamodal: data });
-                      }} className="font-semibold text-lg bg-blue-700 hover:bg-blue-800 px-3 py-1.5 rounded-lg">Book a Movie</button>
-				</div>
+                <div>
+                  <button
+                    onClick={() => {
+                      setmodal({ show: true, datamodal: data });
+                    }}
+                    className="font-semibold text-lg bg-blue-700 hover:bg-blue-800 px-3 py-1.5 rounded-lg"
+                  >
+                    Book a Movie
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         ) : (
-          <p className="text-white text-3xl" >Loading...</p>
+          <p className="text-white text-3xl">Loading...</p>
         )}
       </div>
     </>
