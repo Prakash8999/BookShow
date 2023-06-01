@@ -56,7 +56,7 @@ loading ? (  <div className="grid grid-cols-4 gap-5 p-5  text-white bg-[#252831]
     </div>
   );
 })}
-</div>) : (    <p className="text-white text-3xl">Loading...</p>)
+</div>) : (    <div className="w-screen h-screen flex justify-center items-center bg-[#252831]  "> <p className="text-white text-3xl">Loading...</p> </div>)
 
     }
     </>
