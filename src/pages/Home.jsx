@@ -23,7 +23,7 @@ const [loading, setLoading] =useState(false)
     <>
     {
 
-loading ? (  <div className="grid grid-cols-4 gap-5 p-5  text-white bg-[#252831] bg-opacity-60 ">
+loading ? (  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5  text-white bg-[#252831] bg-opacity-60 ">
 
 
 

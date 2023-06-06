@@ -13,7 +13,7 @@ const ModalForm = ({ datamodal, setmodal }) => {
   return (
     <>
       <div className=" h-screen w-screen bg-[#343434] bg-opacity-70 flex items-center justify-center fixed  top-0 left-0  shadow-lg z-[100] ">
-        <div className="relative h-[70vh]  overflow-auto w-[45vw] pb-5 bg-[#252831] bg-opacity-100 rounded-lg ">
+        <div className=" relative h-[70vh]  overflow-auto w-[70vw] pb-5 bg-[#252831] bg-opacity-100 rounded-lg ">
           <button
             onClick={() => {
               setmodal({ show: false });
@@ -24,7 +24,7 @@ const ModalForm = ({ datamodal, setmodal }) => {
             <AiOutlineClose />
           </button>
 
-          <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+          <div className="grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-2">
             {datamodal ? (
               <Input
                 type={"text"}
