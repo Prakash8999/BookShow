@@ -38,16 +38,16 @@ const Summary = () => {
         />
       )}
 
-      <div className="flex   h-[100vh] w-[100vw] overflow-hidden items-center justify-center bg-[#252831]">
+      <div className="flex h-auto w-full overflow-hidden items-center justify-center bg-[#252831] ">
         {data ? (
-          <div className="flex">
+          <div className="lg:flex sm:block ">
             <img
               src={data?.image.original}
               alt=""
-              className="h-[100vh] w-[40vw] p-5 rounded-lg"
+              className="lg:h-[100vh] lg:w-[40vw]  p-5 rounded-lg"
             />
-            <div className="p-5  ">
-              <div className="border-2 w-[55vw] h-full text-white p-3 flex flex-col items-center gap-y-14 rounded-lg">
+            <div className="p-5 ">
+              <div className="border-2 w-full h-full text-white p-3 flex flex-col items-center gap-y-14 rounded-lg">
                 <p className="text-5xl font-semibold ">{data?.name}</p>
                 <div dangerouslySetInnerHTML={{ __html: data?.summary }} />
                 <div className="flex gap-x-10">
